@@ -1,0 +1,11 @@
+{% for keyword in item.keywords %}
+<meta name="keywords" contents="{{keyword}}" />
+{% endfor %}
+
+{% for description in item.description %}
+<meta name="description" contents="{{description}}" />
+{% endfor %}
+
+{% for tag in item.tags %}
+<meta name="tags" contents="{{tag}}" />
+{% endfor %}

@@ -1,0 +1,28 @@
+
+<footer class="post-info">
+
+{% if item.authors %}
+<address class="vcard author">
+  Autor: {% for author in item.authors %}
+      <a rel="me" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+    {% endfor %}
+</address>
+{% endif %}
+{% if item.tags %}
+    Tagi: {% for tag in item.tags %}
+        <a rel="tag" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %},{% endif %}
+    {% endfor %}
+{% endif %}
+<aside>
+{% if item.date %}
+<abbr class="published" title="{{ item.date.isoformat() }}">
+  <strong>Opublikowany: </strong>{{ item.locale_date }}
+</abbr>
+{% endif %}
+{% if item.modified and item.date != item.modified %}
+<abbr class="modified" title="{{ item.modified.isoformat() }}">
+  <br> <strong>Zmiany z</strong>: {{ item.locale_modified }}
+</abbr>
+{% endif %}
+</aside>
+</footer><!-- /.post-info -->

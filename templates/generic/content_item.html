@@ -1,0 +1,21 @@
+<section class="blog-post">
+{% if hide_header is  undefined or not hide_header %}
+    {% include "generic/content_item_header.html" %}
+{% endif %}
+
+{% if show_summary is defined and show_summary%}
+    {% set navigation %}
+        <a href="{{ SITEURL }}/{{ item.url }}">... więcej</a>
+    {% endset %}
+    {{ item.content|truncate_words("150w",  navigation)}}
+{% else %}
+    {{ item.content}}
+{% endif %}
+
+<footer class="blog-post-meta">
+
+    {% include "includes/footer.html" %}
+
+</footer>
+
+</section>

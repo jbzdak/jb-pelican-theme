@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block head %}
+  {{ super() }}
+    {% include "includes/additional_head.html" %}
+
+{% endblock %}
+
+{% block pagetitle %}
+    {% set title_contents %}
+        {% if add_sitename is defined and add_sitename %}{{ SITENAME }}: {% endif %}{% include "generic/content_item_header.html" %}
+    {% endset %}
+    {% include "includes/pagetitle_contents.html" %}
+{% endblock %}
+
+{% block content %}
+{% with hide_header=True %}
+    {% include "generic/content_item.html" %}
+{% endwith %}
+
+{% endblock %}

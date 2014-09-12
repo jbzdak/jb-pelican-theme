@@ -1,0 +1,8 @@
+
+<header>
+    <h2 class="blog-post-title">
+        <a href="{{ SITEURL }}/{{ item.url }}" rel="bookmark" title="Permalink to {{ item.title|striptags }}">{{ item.title }}</a>
+    </h2>
+    {% import 'translations.html' as translations with context %}
+    {{ translations.translations_for(item) }}
+</header>
