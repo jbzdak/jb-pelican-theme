@@ -18,4 +18,13 @@
     {% include "generic/content_item.html" %}
 {% endwith %}
 
+
+{% endblock %}
+
+
+{% block additionaljs %}
+    {{ super() }}
+    {% if DISQUS_SITENAME %}
+        {% include "includes/disqs.html" %}
+    {% endif %}
 {% endblock %}
