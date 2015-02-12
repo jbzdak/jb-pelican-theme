@@ -39,11 +39,11 @@
 <div class="container">
 
     <div class="blog-header">
-        <h1 class="blog-title">
             {% block pagetitle %}
-               <h1 class="blog-title">{{ SITENAME }}: {% block subpagetitle%} {% endblock %}</h1>
+                <div class="jumbotron">
+                     <h1 class="blog-title">{{ SITENAME }}{% block subpagetitle%} {% endblock %}</h1>
+                </div>
             {% endblock %}
-        </h1>
         <p class="lead blog-description">
             {% block lead %}
 
@@ -108,9 +108,11 @@
 
 {% block additionaljs %}
 
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+{#    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>#}
 
+    {% if STATCOUNTER_ID %}
     {% include "includes/statcounter.html" %}
+    {% endif %}
 {% endblock %}
