@@ -2,5 +2,7 @@
 {% with item=article %}
     {% include "generic/content_item_fullpage.html" %}
 
+    {% if DISQUS_SITENAME %}
     {% include "includes/disqs.html" %}
+    {% endif %}
 {% endwith %}
