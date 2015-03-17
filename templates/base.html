@@ -95,6 +95,22 @@
 
     </div>
 
+       <div class="sidebar-module sidebar-module-inset">
+          <h4>Dodatkowe materiały:</h4>
+
+        <ul>
+
+        {% for art in pages %}
+            {% if "materialy" in art.tags %}
+                <li><a href="{{ SITEURL }}/{{ art.url }}">{{ art.title }}</a></li>
+            {% endif %}
+        {% endfor %}
+
+
+        </ul>
+
+    </div>
+
 {#      <div class="sidebar-module">#}
 {#        <h4>Archives</h4>#}
 {#        <ol class="list-unstyled">#}
